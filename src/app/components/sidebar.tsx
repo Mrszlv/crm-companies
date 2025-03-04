@@ -1,10 +1,21 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import SidebarItem from '@/app/components/sidebar-item';
+import { usePathname, useRouter } from 'next/navigation';
 
 export interface SidebarProps {}
 
 export default function Sidebar({}: SidebarProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleExitClick = () => {
+    router.push('/');
+  };
   return (
     <aside className="fixed top-0 left-0 z-40 w-60 h-screen">
       <div className="flex flex-col h-full overflow-auto bg-gray-900">
@@ -20,6 +31,7 @@ export default function Sidebar({}: SidebarProps) {
         </div>
         <ul className="space-y-7">
           <SidebarItem
+            current={pathname === '/dashboard'}
             pathname="/dashboard"
             src="/icons/squares.svg"
             alt="dashboard icon"
@@ -27,6 +39,7 @@ export default function Sidebar({}: SidebarProps) {
             Dashboard
           </SidebarItem>
           <SidebarItem
+            current={pathname === '/companies'}
             pathname="/companies"
             src="/icons/briefcase.svg"
             alt="dashboard icon"
@@ -34,7 +47,10 @@ export default function Sidebar({}: SidebarProps) {
             Companies
           </SidebarItem>
         </ul>
-        <button className="flex items-center gap-2 p-6 mt-auto mx-auto">
+        <button
+          className="flex items-center gap-2 p-6 mt-auto mx-auto"
+          onClick={handleExitClick}
+        >
           <Image
             width={18}
             height={18}
