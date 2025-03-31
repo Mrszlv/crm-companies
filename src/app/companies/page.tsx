@@ -9,9 +9,9 @@ import CompanyRow from '../components/company-row';
 
 import { Status } from '../components/status-label';
 
-export interface PageProps {}
+// export interface PageProps {}
 
-export default function Page({}: PageProps) {
+export default function Page() {
   return (
     <>
       <Header>Companies</Header>
