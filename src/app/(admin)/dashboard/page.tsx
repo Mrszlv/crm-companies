@@ -1,3 +1,5 @@
+import Header from '@/app/components/header';
+import MagicButton from '@/app/components/magic-button';
 import React from 'react';
 
 // export interface PageProps {}
@@ -5,7 +7,10 @@ import React from 'react';
 export default function Page() {
   return (
     <main>
-      <h1>Dashboard page</h1>
+      <Header>Dashboard</Header>
+      <div className="mt-5 ml-10">
+        <MagicButton />
+      </div>
     </main>
   );
 }
