@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-// import Header from '@/app/components/header';
+
 import { notFound } from 'next/navigation';
 
 export interface PageProps {
