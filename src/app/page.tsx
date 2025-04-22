@@ -9,7 +9,6 @@ export default function Home() {
 
       <div className="flex gap-5 mt-5 ml-10">
         <AddCompanyButton />
-        <MagicButton />
       </div>
     </main>
   );
