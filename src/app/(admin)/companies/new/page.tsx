@@ -1,10 +1,9 @@
 'use client';
 
 import React from 'react';
-
 import CompanyForm from '@/app/components/company-form';
 
-// export interface PageProps{}
+// export interface PageProps {}
 
 export default function Page() {
   return (
