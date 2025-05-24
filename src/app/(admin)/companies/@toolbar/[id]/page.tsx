@@ -8,10 +8,10 @@ export interface PageProps {
 }
 
 export default function Page({ params }: PageProps) {
-  const resolved = React.use(params);
+  const { id } = React.use(params);
 
   return (
-    <Toolbar action={<AddPromotionButton companyId={resolved.id} />}>
+    <Toolbar action={<AddPromotionButton companyId={id} />}>
       <SearchInput />
     </Toolbar>
   );

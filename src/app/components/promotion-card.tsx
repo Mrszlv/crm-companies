@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { Promotion } from '@/lib/api';
 
-export interface PromotionProps {
+export interface PromotionCardProps {
   promotion: Promotion;
 }
 
-export default function PromotionCard({ promotion }: PromotionProps) {
+export default function PromotionCard({ promotion }: PromotionCardProps) {
   return (
     <div className="rounded overflow-hidden	bg-gray-100">
       <div className="relative w-full h-40 bg-gray-300">

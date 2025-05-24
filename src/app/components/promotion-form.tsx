@@ -53,11 +53,14 @@ export default function PromotionForm({
   });
 
   const handleSubmit = async (values: PromotionFieldValues) => {
+    if (!company) {
+      return;
+    }
     await mutateAsync({
       ...values,
       discount: Number(values.discount) || 0,
-      companyId: company?.id || '',
-      companyTitle: company?.title || '',
+      companyId: company.id,
+      companyTitle: company.title,
     });
 
     if (onSubmit) {
@@ -70,12 +73,19 @@ export default function PromotionForm({
       <Form className="flex flex-col gap-10">
         <p className="mb-0.5 text-xl">Add new promotion</p>
         <div className="flex flex-col gap-5">
-          <InputField required label="Title" placeholder="Title" name="title" />
+          <InputField
+            required
+            label="Title"
+            placeholder="Title"
+            name="title"
+            as="input"
+          />
           <InputField
             required
             label="Description"
             placeholder="Description"
             name="description"
+            as="input"
           />
           <InputField
             required
@@ -83,8 +93,9 @@ export default function PromotionForm({
             label="Discount"
             placeholder="Discount"
             name="discount"
+            as="input"
           />
-          <LogoUploader label="Image" placeholder="Upload photo" />
+          <LogoUploader square label="Image" placeholder="Upload photo" />
         </div>
         <Button type="submit" disabled={isPending}>
           Add promotion

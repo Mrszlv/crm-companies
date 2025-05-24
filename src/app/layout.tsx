@@ -3,7 +3,7 @@ import './globals.css';
 
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
-import Providers from './components/providers';
+import Providers from '@/app/components/providers';
 
 const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
 

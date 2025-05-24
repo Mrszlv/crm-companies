@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import * as React from 'react';
 import PromotionForm from '@/app/components/promotion-form';
 
 export interface PageProps {
@@ -8,10 +8,10 @@ export interface PageProps {
 }
 
 export default function Page({ params }: PageProps) {
-  const resolved = React.use(params);
+  const { id } = React.use(params);
   return (
     <div className="py-6 px-10">
-      <PromotionForm companyId={resolved.id} />
+      <PromotionForm companyId={id} />
     </div>
   );
 }

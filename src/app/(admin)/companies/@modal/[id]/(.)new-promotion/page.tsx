@@ -9,11 +9,13 @@ export interface PageProps {
 }
 
 export default function Page({ params }: PageProps) {
-  const resolved = React.use(params);
   const router = useRouter();
+
+  const { id } = React.use(params);
+
   return (
     <PromotionFormModal
-      companyId={resolved.id}
+      companyId={id}
       show={true}
       onClose={() => router.back()}
     />
